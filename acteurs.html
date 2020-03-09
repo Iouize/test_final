@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Prod'Uction | Acteurs/trices</title>
+   <script src="https://vuejs.org/js/vue.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">
+   <script>
+   </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Prod'Uction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+   
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><img class="icon" src="home-run.png"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="films.html">Films</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="acteurs.html">Acteurs/trices</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+   <main id="casting" class="container">
+        <h1>Acteurs de la maison de production</h1>
+        <div class="d-flex justify-content-around flex-wrap">
+            <div v-for="evt in evts" class="col-sm-6 col-md-2">
+                <div class="photo"><img :src=evt.src ></div>
+                <h2 class="prenoms">{{ evt.Prénom }} {{evt.Nom}} </h2>
+            </div>
+        </div>
+   </main>
+   <script>
+       var listeActeur = [
+       {
+            id:1,
+            Prénom:"James",
+            Nom: "Franco",
+            src: "https://fr.web.img3.acsta.net/pictures/18/09/20/14/42/1001956.jpg"
+        },
+        {
+            id:2,
+            Prénom:"Mark",
+            Nom: "Hamill",
+            src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mark_Hamill_%282017%29.jpg"
+        },
+        {
+            id:3,
+            Prénom:"Ian",
+            Nom: "McKellen",
+            src: "https://upload.wikimedia.org/wikipedia/commons/1/15/SDCC13_-_Ian_McKellen.jpg"
+        },
+        {
+            id:4,
+            Prénom:"Natalie",
+            Nom: "Portman",
+            src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Natalie_Portman_Cannes_2015_5.jpg"
+        },
+        {
+            id:5,
+            Prénom:"Leonardo",
+            Nom: "DiCaprio",
+            src: "https://fr.web.img5.acsta.net/pictures/15/06/24/14/36/054680.jpg"
+        },
+        {
+            id:6,
+            Prénom:"Brad",
+            Nom: "Pitt",
+            src: "https://medias.fashionnetwork.com/image/upload/v1/medias/ab4a10f7679ea2c38819c8c900904f2b2943745.jpg"
+        },
+        {
+            id:7,
+            Prénom:"Scarlett",
+            Nom: "Johansson",
+            src: "https://upload.wikimedia.org/wikipedia/commons/5/57/Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%29_%28cropped%29.jpg"
+        },
+        {
+            id:8,
+            Prénom:"Jim",
+            Nom: "Carrey",
+            src: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Jim_Carrey_2008.jpg"
+        },
+        {
+            id:9,
+            Prénom:"Emma",
+            Nom: "Stones",
+            src: "https://upload.wikimedia.org/wikipedia/commons/3/31/Emma_Stone_at_Maniac_UK_premiere_%28cropped%29.jpg"
+        },
+        {
+            id:10,
+            Prénom:"Emma",
+            Nom: "Watson",
+            src: "https://fr.web.img6.acsta.net/pictures/14/03/26/17/55/164231.jpg"
+        },
+        {
+            id:11,
+            Prénom:"Adèle",
+            Nom: "Haenel",
+            src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ad%C3%A8le_Haenel_Cannes_2017.jpg/220px-Ad%C3%A8le_Haenel_Cannes_2017.jpg"
+        }
+       ]
+
+
+       var casting = new Vue({
+         el: '#casting',
+         data: {
+            evts : listeActeur
+         },
+         methods: {
+
+         }
+      })
+   </script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

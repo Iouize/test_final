@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Prod'Uction | Films</title>
+   <script src="https://vuejs.org/js/vue.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">
+   <script>
+   </script>
+</head>
+
+<body>
+   <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <a class="navbar-brand" href="index.html">Prod'Uction</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav ml-auto">
+                 <li class="nav-item"><a class="nav-link" href="index.html"><img class="icon" src="home-run.png"></a></li>
+                 <li class="nav-item active"><a class="nav-link" href="films.html">Films</a></li>
+                 <li class="nav-item"><a class="nav-link " href="acteurs.html">Acteurs/trices</a></li>
+             </ul>
+         </div>
+     </nav>
+  </header>
+
+   <main id="films" class="container">
+      <h1>Les films</h1>
+      <div class="films">     
+         <section id="filmsproduits">
+            <h2>Films produits</h2>
+            <div class="d-flex justify-content-around flex-wrap">
+               <div v-for="evt in evts" v-if="evt.idTypeFilm == 1" class="detailsFilm col-sm-10 col-md-3">
+                  <div><img :src=evt.src></div>
+                  <h3>{{ evt.titre }}</h3>
+                  <ul>
+                     <li>Synopsis : {{ evt.synopsis }}</li>
+                     <li>Budget : {{ evt.budget }}</li>
+                     <li>Casting : {{evt.casting }}</li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+         <section id="filmsenprod">
+            <h2>Films en production</h2>
+            <div class="d-flex justify-content-around flex-wrap">
+               <div v-for="evt in evts" v-if="evt.idTypeFilm == 2" class="detailsFilm col-sm-10 col-md-3">
+                  <div><img :src=evt.src></div>
+                  <h3>{{ evt.titre }}</h3>
+                  <ul>
+                     <li>Synopsis : {{ evt.synopsis }}</li>
+                     <li>Budget : {{ evt.budget }}</li>
+                     <li>Casting : {{evt.casting }}</li>
+                  </ul>
+            </div>
+            </div>
+         </section>
+      </div>
+   </main>
+   <script>
+      var listeFilms = [
+         {
+            id: 1,
+            titre: 'La planète des singes',
+            synopsis : "Ceci est le synopsis",
+            budget : "500 000 €",
+            casting : "James Franco",
+            src: "https://img.huffingtonpost.com/asset/5de7b3fe21000058df34ef9f.jpeg?cache=x4VsasxLNu&ops=scalefit_630_noupscale",
+            idTypeFilm:1
+         },
+         {
+            id:2,
+            titre : "Star Wars",
+            synopsis : "Ceci est le synopsis",
+            budget : "700 000 €",
+            casting : "Mark Hamill",
+            src: "https://fr.web.img6.acsta.net/videothumbnails/15/04/30/10/52/509676.jpg",
+            idTypeFilm:1
+         },
+         {
+            id:3,
+            titre : "Le Seigneur des anneaux",
+            synopsis : "Ceci est le synopsis",
+            budget : "800 000 €",
+            casting : "Ian McKellen",
+            src: "https://jeuxvideo.rds.ca/wp-content/uploads/sites/2/2019/07/LOTR.jpg",
+            idTypeFilm:2
+         },
+         {
+            id:4,
+            titre : "Retour vers le futur",
+            synopsis : "Ceci est le synopsis",
+            budget : "400 000 €",
+            casting : "Michael J. Fox",
+            src: "https://www.nme.com/wp-content/uploads/2019/05/RYM972-696x442.jpg",
+            idTypeFilm:1
+         },
+      ]
+    
+      var films = new Vue({
+         el: '#films',
+         data: {
+            evts : listeFilms
+         },
+         methods: {
+
+         }
+      })
+   </script>
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
