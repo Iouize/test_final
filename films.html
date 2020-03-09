@@ -38,7 +38,7 @@
             <h2>Films produits</h2>
             <div class="d-flex justify-content-around flex-wrap">
                <div v-for="evt in evts" v-if="evt.idTypeFilm == 1" class="detailsFilm col-sm-10 col-md-3">
-                  <div><img :src=evt.src></div>
+                  <div><img :src=evt.src class="photo"></div>
                   <h3>{{ evt.titre }}</h3>
                   <ul>
                      <li>Synopsis : {{ evt.synopsis }}</li>
@@ -52,7 +52,7 @@
             <h2>Films en production</h2>
             <div class="d-flex justify-content-around flex-wrap">
                <div v-for="evt in evts" v-if="evt.idTypeFilm == 2" class="detailsFilm col-sm-10 col-md-3">
-                  <div><img :src=evt.src></div>
+                  <div><img :src=evt.src class="photo"></div>
                   <h3>{{ evt.titre }}</h3>
                   <ul>
                      <li>Synopsis : {{ evt.synopsis }}</li>
